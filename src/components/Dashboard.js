@@ -34,7 +34,8 @@ const Dashboard = (props) => {
                 </TableHead>
                 <TableBody>
                 {props.cars.map((car, idx) => (
-                    <TableRow key={car.id}>
+                    <TableRow key={idx}>
+                    {/* <TableRow key={car.id}> */}
                         <TableCell component="th" scope="row">
                             {car.id}
                         </TableCell>
@@ -44,7 +45,7 @@ const Dashboard = (props) => {
                         <TableCell>{car["horsepower"]}</TableCell>
                         <TableCell>
                             <DeleteIcon
-                                onClick={(idx) => props.removeCar(idx)}
+                                onClick={(index) => props.removeCar(idx)}
                                 className="icon text-red" />
                         </TableCell>
                     </TableRow>
